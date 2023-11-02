@@ -1,0 +1,42 @@
+TypeScript:
+    Quick Overview: 
+        TypeScript is a superset of JavaScript. It is basically Javascript but with typing, objects, classes, interfaces, and is statically typed. 
+        It is a good language to learn if you are coming from an OO language like Java. It was created to bridge the gap between client-side and 
+        server-side applications, since Javascript isn't strongly typed or OO, TypeScript comes to save the day. 
+
+    Compiling and Execution: 
+        Since all JavaScript is TypeScript, converting from JavaScript to TypeScript is super easy, you just change the file extension from .js to .ts. 
+        TypeScript can run anywhere JavaScript can, making it very portable. TypeScript does have a transpiler (source-to-source compiler) that can error-check, 
+        which helps with debugging. When a TypeScript program is compiled, it's code is written into the JavaScript equivalent. To execute a TypeScript program, 
+        you must first transpile it into JavaScript. You can do that in a terminal using the command tsc filename.ts, then you run the JavaScript file it created 
+        using the command node filename.js. 
+
+    Development: 
+        Node JS is needed to download TypeScript onto your machine. Once you have Node, you can run the following command in a terminal: npm install -g typescript.
+        Many of the popular IDEs have TypeScript support, like Eclipse, VSCode, and WebStorm. Or if you prefer a text editor, Emacs, Notepad/++, Vim will all do the trick.
+    
+    What Makes it Different:
+        There are no integer types in TypeScript, but instead a Numnber type that is a 64-bit floating point value. A Number type can represent both an Integer and Doubles.
+        To intialize and define a variable, you follow this syntax: var [identifier]:[type] = value;. You can leave out the type, and in that case it will be of type any, which is dynamic. 
+        You can cast in TypeScript, using <> symbols to define the type. 
+
+        https://www.tutorialspoint.com/typescript/index.htm
+
+
+Reverse Example:
+    This is a simple example that takes in a string as a parameter and returns the backwards version of it. Since Javascript is not a typed language and is dynamic, 
+    we don't need to a return type or paramter type. The let keyword is more of an access modifier, saying that this variable will only be alive 
+    locally in this function. If I were to use var instead, then it would make ret global. The for loop is nothing new. We can treat the word parameter as 
+    an array and access characters based on the index, and use the + sign to concatenate it to the current value of ret. 
+
+Promise Example:
+    Promises are very interesting in Javascript. They can hold both executable code, and function calls. When creating a new Promise, you pass in 
+    two function names, one for a successful result, and one for a failed result. When the executable code inside is running, the state of the Promise 
+    is considered "pending". You then define the two function passed into a Promise by calling the name of your Promise with .then. You define the 
+    functions in the same order they are passed in. In my example, the success function is defined first, and the failure one second. If you were to 
+    flip the order, then the result will change. My example checks if the value of the variable amount is equal or greater than 20, and if it is, that 
+    is considered a success, and in my function definition for my Promise, I call the subtractTen function and pass amount in. If amount is less than 20, 
+    then that is considered a failure, and I call the addTen function and pass in amount. This example is very simple example. Promises are mostly used in 
+    situations where you are waiting for something to happen, like a TimeOut, waiting for a file, or waiting for a request to return. 
+
+    https://www.w3schools.com/js/js_promise.asp

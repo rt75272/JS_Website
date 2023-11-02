@@ -1,0 +1,8 @@
+Summary:
+1. Create a JetBrains learning account
+2. Download WebStorm
+3. During the set up remember to click .js .css .html .json 
+4. Activate your WebStorm with your JetBrains Account
+5. (Optional) Adjust the terminal with one that you desire, in my case bash.exe
+6. Choose which interpreter you would like to use (example Node.js)
+7. Use the specific interpreters keyword for running(example Node <program name>)

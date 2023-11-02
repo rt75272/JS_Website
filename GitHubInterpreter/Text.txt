@@ -1,0 +1,5 @@
+https://github.com/NeilFraser/JS-Interpreter
+
+1. First access the demo version of the Interpreter
+2. Type the program you want to use, click parse, then click run.
+3. (Optional) for visual feedback make sure to use alerts()

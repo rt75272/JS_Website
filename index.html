@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@500;700&display=swap"
+    rel="stylesheet">
+  <script src="partymode.js"></script>
+  <script src="smoothscroll.js"></script>
+  <script src="Ashlyn_Examples.js"></script>
+  <title>JavaScript</title>
+  <link rel="shortcut icon" type="image/png" href="salmon_favicon.png" />
+</head>
+
+<body>
+  <div class="site-container">
+    <header class="site-header sticky">
+      <!-- We can apply an onlick attribute to an arbitrary html element to call a JavaScript function -->
+      <div class="logo-container" onclick="getPartyStarted()">
+        <svg id="logo" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" ppreserveAspectRatio="xMidYMid meet">
+          <path id="logo-bg" d="M0 0h256v256H0V0z" style="fill: #eed94d" />
+          <path id="logo-letters"
+            d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.087-21.996M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257 0-18.044 13.747-31.792 35.228-31.792 15.294 0 26.292 5.328 34.196 19.247L210.29 147.43c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.819-24.574"
+            style="fill: #111111" />
+        </svg>
+      </div>
+      <nav class="sidebar">
+        <ul>
+          <li><a href="#about">About</a>
+            <ul>
+              <li><a class="scroll" href="#introduction">Introduction</a></li>
+              <li><a class="scroll" href="#history">History</a></li>
+              <li><a class="scroll" href="#features">Features</a></li>
+              <li><a class="scroll" href="#specification">Specification</a></li>
+              <li><a class="scroll" href="#documentation">Documentation</a></li>
+              <li><a class="scroll" href="#resources">Resources</a></li>
+            </ul>
+          </li>
+          <li><a class="scroll" href="#examples">Examples</a>
+            <ul>
+              <li><a class="scroll" href="#ex1">Reverse String</a></li>
+              <li><a class="scroll" href="#ex2">Promise</a></li>
+              <li><a class="scroll" href="#ex3">NodeJS Command Line Arguments</a></li>
+              <li><a class="scroll" href="#ex4">Vowel, Digit, Lowercase Checker</a></li>
+              <li><a class="scroll" href="#ex5">Odd or Even</a></li>
+              <li><a class="scroll" href="#ex6">Party Mode</a></li>
+              <li><a class="scroll" href="#ex7">Smooth Scroll</a></li>
+            </ul>
+          </li>
+          <li><a class="scroll" href="#comparisons">Comparisons</a>
+            <ul>
+              <li><a class="scroll" href="#comp1">TypeScript</a></li>
+              <li><a class="scroll" href="#comp2">Java</a></li>
+            </ul>
+          </li>
+          <li><a class="scroll" href="#translators">Translators</a></li>
+        </ul>
+      </nav>
+      <div class="starwars-link">
+        <a href="starwars_index.html">
+          <svg enable-background="new 0 0 693.615 419.375" viewBox="0 0 693.615 419.375"
+            xmlns="http://www.w3.org/2000/svg">
+            <g fill="#fff">
+              <path
+                d="m148.718 221.207 8.67 25.461c4.691 13.768 8.879 24.779 9.425 24.779.009 0 .017-.004.024-.01.6-.53 17.57-49.811 17.57-49.811h32.89l-39.68 115.619h-22.86s-24.4-70.471-24.3-70.739l-25.47 69.851h-22.63l-39.18-115.15 32.73.021s17.929 50.821 18.168 50.821c.001 0 .001-.001.002-.002l17.89-50.841h36.751m-116.715-8.006 3.601 10.584 39.18 115.149 1.845 5.424h5.729 22.63 5.598l1.918-5.26 17.685-48.5c1.524 4.434 3.171 9.213 4.818 13.988 6.089 17.655 12.191 35.277 12.191 35.277l1.864 5.383h5.696 22.86 5.712l1.854-5.403 39.68-115.618 3.637-10.598h-11.204-32.89-5.706l-1.858 5.396c-2.974 8.635-6.921 20.031-10.296 29.676-.509-1.463-1.039-3.001-1.587-4.611l-8.669-25.46-1.846-5.421h-5.727-36.75-5.666l-1.881 5.345-10.453 29.706c-3.453-9.706-7.456-21.017-10.516-29.691l-1.882-5.334-5.657-.004-32.73-.021z" />
+              <path
+                d="m655.258 220.758-.075 30.305s-32.643-.109-49.239-.109c-5.521 0-9.266.013-9.444.045-2.86.521-4.681 6.602-3.87 9.271.399 1.35 3.391 5.76 6.63 9.81 3.229 4.051 8.54 10.681 11.78 14.729 8.319 10.381 9.46 12.43 10.229 18.391 1.25 9.681-3.329 20.16-11.829 27.07-8.518 6.93-8.145 6.979-71.383 6.979-.916 0-1.835 0-2.777 0-38.46-.01-58.8-.329-61.761-.989-5.26-1.19-13.64-8.03-35.79-29.28-7.967-7.636-15.309-14.322-15.686-14.324-.01 0-.015.006-.015.016l-.261 44.579-35.899-.159-.221-114.98h45.271 34.79c24.13.871 40.46 24.91 37.21 40.24-.74 3.479-2.62 8.521-4.181 11.2-3.21 5.5-11.38 12.56-18.011 15.591-2.449 1.108-4.449 2.398-4.449 2.858 0 1.71 8.061 9.649 11.08 10.91 2.579 1.079 10.09 1.319 43.21 1.319 3.882 0 7.408.002 10.608.002 33.293 0 31.618-.24 34.19-5.741 1.801-3.83.431-6.12-12.239-20.39-16.051-15.971-14.37-23.621-14.48-29.271-.229-6.77 5.102-28.069 32.812-28.069zm-215.07 53.12c15.37 0 18.49-.239 21.761-1.66 11.04-4.8 11.63-18.979 1.04-25.271-2.319-1.381-5.3-1.609-21.96-1.7l-19.279-.101c.159.15-.061 27.57-.061 27.57s4.829 1.162 18.499 1.162m223.089-61.12h-8.021-73.8c-16.032 0-25.515 6.328-30.646 11.637-8.347 8.633-10.313 19.504-10.162 24.629.008.427.003.865-.002 1.322-.073 8.329 1.154 17.758 16.659 33.246 3.065 3.452 8.193 9.239 10.131 12.115-4.238.521-14.98.521-26.262.521h-4.792l-5.816-.002c-19.904 0-36.688-.057-40.128-.736-.481-.314-1.156-.854-1.898-1.498 6.877-4.235 13.83-10.799 17.104-16.412 1.987-3.413 4.178-9.243 5.098-13.568 2.04-9.625-1.325-21.236-9.001-31.068-8.956-11.471-21.985-18.334-35.746-18.83l-.145-.006h-.145-34.79-45.271-8.016l.016 8.017.221 114.979.016 7.949 7.949.035 35.899.159 7.988.035.047-7.988.155-26.706c.733.696 1.491 1.419 2.269 2.165 24.227 23.24 32.359 29.679 39.562 31.308 1.979.441 5.253 1.172 63.523 1.188h2.779c31.546 0 47.38 0 56.799-.91 10.789-1.043 14.259-3.49 19.461-7.725l.173-.141c10.685-8.687 16.323-21.83 14.715-34.3-1.048-8.11-3.194-11.479-11.922-22.368l-2.594-3.24c-3.04-3.799-6.713-8.387-9.175-11.475-1.986-2.484-3.546-4.689-4.487-6.133 1.236-.003 2.841-.005 4.918-.005 16.395 0 48.887.108 49.213.11l8.008.026.02-8.008.075-30.306zm-233.538 52.828c.013-2.021.025-4.287.038-6.557.01-2 .019-4.004.022-5.84l11.187.058c6.429.035 16.103.088 17.989.623 2.407 1.461 3.75 3.72 3.604 6.06-.08 1.264-.682 3.588-3.821 4.951-1.75.76-4.54.997-18.57.997-4.45 0-7.883-.129-10.449-.292z" />
+              <path
+                d="m312.908 220.287 40.29 115.92-32.83.15-5.45-17.41-58.7-.471-5.18 17.431-32.5-.341 39.78-115.229zm-26.401 16.996c-.083.333-5.144 14.219-10.222 28.104-5.12 14-10.257 28-10.328 28.109 0 .001-.001.001 0 .001s0 0 0-.001c.136-.04 18.316-.08 29.968-.08 5.453 0 9.475.009 9.55.029.001.004.001.005.001.005s0-.001 0-.003c0 0 0 0-.001-.002-.204-.529-18.909-55.486-18.968-56.162.001-.004.001-.006.001-.006-.001 0-.001.002-.001.006m32.088-25.001-5.693.005-54.59.051-5.696.005-1.859 5.386-39.78 115.229-3.623 10.494 11.102.115 32.5.341 6.033.063 1.719-5.782 3.466-11.662 46.854.375 3.708 11.848 1.765 5.638 5.907-.026 32.829-.15 11.195-.052-3.676-10.574-40.29-115.92zm-41.123 73.142c1.515-4.129 3.556-9.71 6.327-17.289.869-2.376 1.664-4.551 2.393-6.545.663 1.956 1.385 4.084 2.169 6.398.646 1.906 3.485 10.27 5.92 17.428-7.24 0-12.69.001-16.809.008z" />
+              <path
+                d="m326.488 81.928v28.6h-57.28v87.47h-34.15v-87.54l-66.86.19c-8.06 0-9.14 6.42-9.14 8.88 0 3.02 1.97 6.04 12.79 19.74 7.02 8.9 13.47 17.78 14.32 19.72 4.64 10.68-1.36 27.32-12.29 34.08-7.79 4.813-6.459 4.931-64.308 4.931-2.974 0-6.096 0-9.392 0h-62.27v-32.13h97.9l2.89-2.01c1.95-1.36 3.08-3.23 3.51-5.79.6-3.68.29-4.16-11.8-17.78-14.29-16.1-15.8-19.04-15.06-29.32.84-11.73 11.3-28.77 29.58-28.77zm8-8.012-8.013.012-181.56.27c-10.458 0-20.171 4.518-27.342 12.722-5.814 6.652-9.63 15.429-10.206 23.477-.973 13.511 2.137 18.393 17.056 35.202 4.33 4.877 8.447 9.516 9.821 11.486-.022.079-.042.13-.054.159-.015.012-.038.03-.07.052l-.822.572h-95.39-8v8 32.13 8h8 62.27 4.937 4.455c28.522 0 42.6-.027 50.894-.635 9.49-.695 12.518-2.323 17.054-5.14l.566-.351c14.262-8.821 21.612-29.827 15.422-44.074-1.91-4.358-14.003-19.746-15.376-21.486-3.796-4.807-10.062-12.74-11.054-15.036.024-.193.071-.393.121-.532.165-.042.481-.098 1.001-.098l58.86-.167v79.517 8h8 34.15 8v-8-79.47h49.28 8v-8-28.6z" />
+              <path
+                d="m419.548 82.857 40.18 116.22-32.77-.18-5.32-17.41-58.439-.26-5.221 16.77h-33.369l39.739-115.14zm-46.811 73.621 39.801-.05c.001 0 .001.001.001.001.136 0-19.342-57.201-19.472-57.241-.142-.005-20.779 57.29-20.33 57.29m52.51-81.621h-5.699-55.2-5.701l-1.86 5.39-39.74 115.141-3.662 10.61h11.225 33.37 5.889l1.75-5.623 3.461-11.121 46.632.207 3.599 11.774 1.721 5.629 5.887.033 32.77.18 11.297.062-3.691-10.676-40.18-116.22zm-41.396 73.607c2.468-7.027 5.904-16.657 9.014-25.312 2.948 8.644 6.209 18.245 8.588 25.29z" />
+              <path
+                d="m532.396 82.857c25.921 0 43.91.37 47.37.97 8 1.39 15.23 5.66 20.65 12.22 5.67 6.86 6.97 10.14 7.71 19.54 1.061 13.27-5.25 24.72-17.7 32.15-3.63 2.17-7.359 4.28-8.29 4.7-1.43.65-1.239 1.27 1.32 4.27 1.649 1.93 4.51 4.68 6.35 6.11l3.36 2.61 62.08.89.609 31.68h-38.061c-29.439 0-38.86-.27-41.62-1.2-4.13-1.4-14.069-9.82-34.271-29.04l-14.42-13.72.152 43.96h-37.043v-115.14zm-5.458 51.77h19.671c19.141 0 19.739-.06 22.47-2.11 4.881-3.66 6.609-7.43 6.091-13.22-.53-5.97-2.83-9.08-8.601-11.58-3.25-1.42-6.381-1.65-21.721-1.65h-17.91zm5.458-59.77h-41.8-8v8 115.14 8h8 37.043 8.028l-.028-8.028-.088-25.216.84.799c24.986 23.773 32.356 29.173 37.218 30.821 3.733 1.259 9.982 1.624 44.188 1.624h38.061 8.154l-.156-8.154-.609-31.68-.148-7.734-7.734-.111-59.402-.851-1.245-.967c-.396-.309-.876-.717-1.389-1.179.446-.264.854-.507 1.207-.717 15.003-8.953 22.866-23.407 21.569-39.653-.863-10.959-2.82-15.896-9.52-24-6.584-7.969-15.621-13.298-25.447-15.005-5.46-.947-32.881-1.089-48.742-1.089zm2.542 39.21h9.91c14.027 0 16.806.233 18.518.981 3.25 1.408 3.58 2.091 3.835 4.957.256 2.848-.097 3.994-2.922 6.112-.093.069-.164.123-.223.166-1.865.345-8.786.345-17.447.345h-11.67z" />
+            </g>
+
+          </svg>
+          <span>API Interface Example</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="title">
+          <h1>JavaScript</h1>
+          <p>The Language of the Web</p>
+        </div>
+
+        <section id="about">
+          <h2>About</h2>
+          <h3 id="introduction">Introduction</h3>
+          <p>JavaScript, often shortened to “JS” is a lightweight, interpreted, object-oriented language. It is best
+            known as the scripting language used for client-side behavior on Web pages. Along with HTML and CSS,
+            JavaScript is one of the core technologies of the World Wide Web andit is used on 97% of websites.
+            All major web browsers include a built in JavaScript engine. While it is most commonly used for Web pages,
+            JavaScript can be used in other environments like Node.js,  Adobe Acrobat, and in frameworks like
+            Electron to create native applications.</p>
+            <div class="center"><img src="images/logos.jpg" alt="logos" class="img logos"></div>
+
+          <h3 id="history">History</h3>
+          <img src="images/netscape.jpg" class="img netscape" alt="Netscape">
+          <p>JavaScript was first released with Netscape Navigator in September 1995. Netscape management initially
+            hired programmer Brendan Eich to embed the Scheme language into the browser. Shortly after however, they
+            decided that he should create a new language with a syntax closer to Java than Scheme. According to Eich, he
+            was able to create the first version of JavaScript in just 10 days. The name has caused confusion, with
+            people often assuming it was a spinof of the then new and hot Java language, but it was likely just a
+            marketing ploy to draw attention.</p>
+            <p>
+              JavaScript has drawn plenty of criticism from the programming community, especially in its early days. Programmers have called out its slowness, lack of use outside of browsers, its reliance on heavy libraries, and its unpredictable type coercion. <a onclick='alert("But things are getting better 😎");'>Its misuse has annoyed many users to say the least.</a></p>
+              <p>espite this sometimes-warranted reputation, JavaScript has continued to improve dramatically since its inception. Libraries like jQuery helped it to gain widespread popularity by making JavaScript's capabilities more powerful and accessable to prorammers by making things like document traversal, Asynchronous JavaScript and XML (AJAX), and event handling easier to use. Today, JavaScript is one of the most ubiquitous languages in the world, with brilliant computer scientists and newbie website operators alike contributing to its bright future. A massive community and support from the world's largest tech giants have brought about a rich software ecosystem with libraries ranging from ecommerce to data visualization, while modern front-end frameworks like React and Vue allow us to create powerful, complex, and secure web applications.
+            </p>
+
+          <h3 id="features">Features</h3>
+          <div class="json-example">
+            <code>
+              <pre>
+// A JavaScript Object
+{
+"name": "Darth Vader",
+"height": "202",
+"mass": "136",
+"hair_color": "none",
+"skin_color": "white",
+"eye_color": "yellow",
+"birth_year": "41.9BBY",
+"gender": "male",
+"homeworld": "http://swapi.dev/api/planets/1/",
+"films": [
+  "http://swapi.dev/api/films/1/",
+  "http://swapi.dev/api/films/2/",
+  "http://swapi.dev/api/films/3/",
+  "http://swapi.dev/api/films/6/"
+],
+"species": [],
+"vehicles": [],
+"starships": [
+  "http://swapi.dev/api/starships/13/"
+],
+"created": "2014-12-10T15:18:20.704000Z",
+"edited": "2014-12-20T21:17:50.313000Z",
+"url": "http://swapi.dev/api/people/4/"
+}
+              </pre>
+            </code>
+          </div>
+          <p>JavaScript is <strong>Imperative</strong> and <strong>structured</strong>, making extensive use of familiar control flow features like if
+            statements, loops, and switch statements. It is both <strong>weakly and dynamically typed</strong>. Weak typing means some types
+            are implicitly cast depending on the context. For instance, the <code>+</code> operator can be used for both addition and concatenation. </p>
+
+  <code style="font-size: 0.75rem;">let x = 2 + 2;<br>
+      console.log(x);<br>
+      4<br>
+      <br>
+      let y = 2 + "2"<br>
+      console.log(y);<br>
+      "22"
+  </code>
+
+            <p>JavaScript makes use of prototypes for object-orientation. Prototypes give inheritance to
+            JavaScript objects. Objects in JS are very flexible when compared to other object-oriented languages in that
+            they can modify both properties and methods. </p>
+
+            <p>Because Java is the language of the web, it is equipped with powerful features for sending and receiving data and information. JavaScript Object Notation (JSON) is data interchange format that uses human-readable text to store data objects with key/value pairs and arrays. Data can easily be transformed back and forth between the two using <code>JSON.stringify()</code> and <code>JSON.parse()</code>. In our example program, we will explore how to reach out to an external data source and manipulate the data in useful ways.</p>
+
+
+
+
+          <h3 id="specification">Specification</h2>
+            <p>ECMAScript 2015 - Second major revision to JavaScript. Also known as ECMAScript6 and ES6. Introduced
+              major new and highly andticipated features including <code>let</code> and <code>const</code> keywords,
+              arrow functions, <code>for</code>/<code>of</code> loops, classes, promises, and many others.</p>
+            <ul>
+              <li><a href="https://tc39.es/ecma262/">ECMAScript® 2020 Language Specification</a></li>
+            </ul>
+            <h3 id="documentation">Documentation</h3>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs</a></li>
+              <li><a href="https://www.w3schools.com/jsref/default.asp">W3Schools JavaScript Docs</a></li>
+              <li><a href="https://devdocs.io/javascript/">DevDocs</a></li>
+              <li><a href="https://nodejs.org/en/docs/">NodeJS Docs</a></li>
+              <li><a href="https://www.electronjs.org/">Electron</a></li>
+              <li><a href="https://reactjs.org/">React</a></li>
+              <li><a href="https://vuejs.org/">Vue</a></li>
+              <li><a href="https://svelte.dev/">Svelte</a></li>
+              <li><a href="https://jquery.com/">jQuery</a></li>
+              <li><a href="https://d3js.org/">D3</a></li>
+            </ul>
+
+            <h3 id="resources">Resources</h3>
+            <ul>
+              <li><a href="https://www.w3schools.com/js/DEFAULT.asp">W3Schools JavaScript Tutorial</a></li>
+              <li><a href="https://www.codecademy.com/learn/introduction-to-javascript">Codecademy Learn JavaScript</a>
+              </li>
+              <li><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/">freeCodeCamp
+                JavaScript Algorithms and Data Structures</a></li>
+                <li><a href="https://javascript.info/">The Modern JavaScript Tutorial</a></li>
+                <li><a href="https://www.reddit.com/r/webdev/">r/webdev</a></li>
+                <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+                <li><a href="https://javascript30.com/">#JavaScript30</a></li>
+                <li><a href="https://medium.com/topic/javascript">Medium.com JavaScript</a></li>
+                <li><a href="https://codepen.io/">CodePen.io</a></li>
+                <li><a href="https://stackoverflow.com/questions/tagged/javascript">Stack Overflow</a></li>
+                <li><a href="https://stateofjs.com/">The State of JavaScript</a></li>
+            </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <h3 id="ex1">Reverse String Example</h3>
+          <p>Here is a simple example of returning the backwords version of a string.</p>
+          <script src="https://gist.github.com/scottloveless/c606f6373bf13f21b2b27148ee32d479.js"></script>
+          <input id="backwordsTextbox" type="text">
+          <input id="backwardsButton"
+            onclick="document.getElementById('reverse').innerHTML = backwards(document.getElementById('backwordsTextbox').value)"
+            type="button" value="Reverse">
+          <p id="reverse"></p>
+          <p>You can run this in a terminal, but you have to have Node JS installed. Put this code snipit into it's own
+            file, calling <code> console.log(backwards(word))</code>, then running <code> node filename.js</code> in the
+            terminal.</p>
+          <h3 id="ex2">Promise Exmaple</h3>
+          <p>Here is an example of using a Promise. We pass in two fucntions, one being a function to execute when the
+            Promise returns true, and one to execute when the Promise returns false.</p>
+          <script src="https://gist.github.com/AshlynAdamson/5251ac922456fd6c15b42e16ddcb5329.js"></script>
+          <p>You can run this in a terminal the same way you would above. This example will output 11, but if you were
+            to
+            change the value of amount to 15, the output would be 25.</p>
+          <h3 id="ex3">NodeJS Command Line Arguments Example</h3>
+          <p>A quick rough example of setting up a javascript file to run in the terminal via NodeJS with user provided
+            arguments.</p>
+          <script src="https://gist.github.com/ryanthompson317/42be945232287ec92daf2f6fdb906906.js"></script>
+          <p>
+            <!--I failed at creating a live interactive github gist, so I used a picture of the output as a placeholder for now.-->
+            <i>Running cmd_arg_example.js without command-line arguments defaults to a built-in array integers</i>
+            <br />
+            <img src="cmd_output.png" />
+            <br />
+            <i>Running cmd_arg_example.js with command-line integer arguments</i>
+            <br />
+            <img src="cmd_output_args.png" />
+          </p>
+
+          <h3 id="ex_tpyes">Expanded Types Example</h3>
+          <script src="https://gist.github.com/ryanthompson317/2802aec59fa778a6eb1af471467a80c4.js"></script>
+          <p>
+            <i>Output from number type checking.</i>
+            <br />
+            <img src="type_example_output.png" />
+            <br />
+          </p>
+
+          <h3 id="ex4"> Vowel, Digit, Lowercase Checker</h3>
+          <p> This program demonstrates how to determine if a value is odd or even</p>
+          <script src="https://gist.github.com/ryanthompson317/bde260082df302c76e9c122c2472b658.js"></script>
+          <!--For some weird reason these gist didn't work for me? Could've been something I did wrong? But I went ahead and set up a new one for now.-->
+          <!--script src=https://gist.github.com/sunnymoran/5e65f0f63210adbb1e854315b6161921.js"></script-->
+          <h3 id="ex5"> Odd or Even</h3>
+          <p> This program checks to see how many digits, vowels, and lowercase letters are in a word</p>
+          <script src="https://gist.github.com/ryanthompson317/f05834ac21c94d2cfae790997bf09f23.js"></script>
+          <!--For some weird reason these gist didn't work for me? Could've been something I did wrong? But I went ahead and set up a new one for now.-->
+          <!--script src=https://gist.github.com/sunnymoran/2478009902e503b977de547970c90793.js"></script-->
+          <h3 id="ex6">Party Mode</h3>
+          <p>The header logo on this page is created with inline SVG which is an XML-based markup language for
+            displaying vector graphics. This format allows us to target specific elements of the SVG with JavaScript.
+            This example makes use of JavaScript's <code>Math</code> and <code>Number</code> objects and applies inline
+            styles to DOM elements using a <code>setInterval</code> function.</p>
+          <script src="https://gist.github.com/scottloveless/45516330116d28fe981551d644b1e5a2.js"></script>
+          <script src="https://gist.github.com/scottloveless/fcc327d53da7c028ee8ae8f5926e3f68.js"></script>
+          <h3 id="ex7">Smooth Scroll</h3>
+          <p>The nav menu links on this page point to elements with corresponding IDs and have all been given a
+            <code>.scroll</code> class. When one of these links is clicked, the script calls a function to scroll from
+            the initial location on the page to the location of the target anchor.
+          </p>
+          <script src="https://gist.github.com/scottloveless/b08f60754f3bc69a0e82a4b4663514fd.js"></script>
+        </section>
+        <section id="comparisons">
+          <h2>Comparison to Other Languages</h2>
+          <h3 id="comp1">TypeScript</h3>
+          <h4>Overview</h4>
+          <p>TypeScript is a superset of JavaScript. It is basically Javascript but with typing, objects, classes,
+            interfaces, and is statically typed.</p>
+          <h4>Compiling and Execution</h4>
+          <p>Since all JavaScript is TypeScript, converting from JavaScript to TypeScript is super easy, you just change
+            the file extension from .js to .ts.
+            When a TypeScript program is compiled, it's code is written into the JavaScript equivalent. To execute a
+            TypeScript program,
+            you must first transpile it into JavaScript. You can do that in a terminal using the command
+            <code>tsc filename.ts</code>, then you run the JavaScript file it created
+            using the command <code>node filename.js</code>.
+          </p>
+          <h4>What Makes it Different</h4>
+          <table cellspacing="0">
+            <tr>
+              <th>Feature</th>
+              <th>JavaScript</th>
+              <th>TypeScript</th>
+            </tr>
+            <tr>
+              <td>Strongly Typed</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Type of Language</td>
+              <td>Scripting</td>
+              <td>Object Oriented</td>
+            </tr>
+            <tr>
+              <td>Static Typing</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Interfaces/Abstraction</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Compilation</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Portable</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Use of JS Libraries</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </table>
+          <p>Good resources on information on TypeScript: </p>
+          <ul>
+            <li><a
+                href="https://www.tutorialspoint.com/typescript/index.htm">https://www.tutorialspoint.com/typescript/index.htm</a>
+              </il>
+            <li><a
+                href="https://www.geeksforgeeks.org/difference-between-typescript-and-javascript/">https://www.geeksforgeeks.org/difference-between-typescript-and-javascript/</a>
+              </il>
+          </ul>
+          <br />
+          <h3 id="comp2">Java</h3>
+          <h4>Overview</h4>
+          <p>The naming would imply that Java and JavaScript are heavily related. However, the two are extremely
+            different. For example, Java is strict with its data types, object-orientation
+            supports static typing and abstractions/interfaces.
+          </p>
+          <h4>Compiling and Execution</h4>
+          <p>
+            JavaScript(<strong>JS</strong>) is typically more of a web based scripted language. which is not primarily
+            meant to only run on a local terminal. However, JS can be ran locally on the terminal with
+            the use of NodeJS. NodeJS requires only a single bash command in the terminal.<i> For example...</i>
+            <br />
+            <code>
+                  $ node your_js_file.js<br/>
+                  <i>Some awesome output from your javascript file</i>
+                </code>
+            <br /><br />
+            Whereas Java is normally ran locally. Typically Java can be ran locally via a bash powered terminal. NodeJS
+            requires a single command in the terminal, whereas java requires two commands in the terminal.
+            <i> For example...</i>
+            <br />
+            <code>
+                  $ javac your_java_file.java<br/>
+                  $ java your_java_file<br/>
+                  <i>Some awesome output from your java file</i>
+                </code>
+          </p>
+          <h4>What Makes it Different</h4>
+          <table cellspacing="0">
+            <tr>
+              <th>Feature</th>
+              <th>JavaScript</th>
+              <th>Java</th>
+            </tr>
+            <tr>
+              <td>Strongly Typed</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Type of Language</td>
+              <td>Scripting</td>
+              <td>Object Oriented</td>
+            </tr>
+            <tr>
+              <td>Static Typing</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Interfaces/Abstraction</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Compilation</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+          </table>
+          <p>Resources on information on Java: </p>
+          <ul>
+            <li><a href="https://www.geeksforgeeks.org/difference-between-java-and-javascript/" target="blank">Geek's
+                Info
+                on Java</a></il>
+            <li><a href="https://docs.oracle.com/javase/8/docs/api/" target="blank">Java 8 API</a></il>
+            <li><a href="https://www.w3schools.com/java/java_intro.asp" target="blank">W3 Schools Java</a></il>
+
+          </ul>
+          <h3 id="translators">Translators</h3>
+          <ul>
+            <li><a href="https://www.jetbrains.com/webstorm/">WebStorm</a></il>
+            <li>Developed by JetBrains, Webstorm is a JavaScript IDE developed for easy use. The service does costs a
+              yearly subscription
+              similar to other services by JetBrains but if you're a student you qualify for free usuage of the tools
+              while you're in school.</il>
+            <li><a href="https://github.com/NeilFraser/JS-Interpreter">Github JS-Interpreter</a></il>
+            <li><a href="https://code.visualstudio.com/">Visual studio Code</a></il>
+          </ul>
+        </section>
+      </div>
+      <footer class="site-footer">
+        <div class="container">
+          <span>A Team Salmon Production</span>
+        </div>
+      </footer>
+    </main>
+
+  </div>
+
+</body>
+
+</html>
