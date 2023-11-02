@@ -1,2 +1,2 @@
-# JS_Website
+# JavaScript Website
 Prgramming Languages(CS 354) JavaScript informational website
